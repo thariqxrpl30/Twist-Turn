@@ -155,13 +155,6 @@ def draw_wheel():
     angle_per_sector = 360 / num_names
     start_angle = current_angle
 
-    # Tambahkan lingkaran luar sebagai border
-    canvas.create_oval(
-        center_x - radius_outer, center_y - radius_outer,
-        center_x + radius_outer, center_y + radius_outer,
-        outline="white", width=2
-    )
-
     # Warna roda jika hanya ada satu data
     if num_names == 1:
         canvas.create_oval(
@@ -215,7 +208,7 @@ def draw_wheel():
             fill="Black",  # Warna Tulisan Pada Lingkaran
             font=("Arial", font_size, "bold"),
             angle=rotation,
-            tags="wheel"
+            # tags="wheel"
         )
 
         start_angle = end_angle
@@ -229,8 +222,10 @@ def panah():
 
     points = [
         arrow_x, arrow_y,
-        arrow_x + arrow_base, arrow_y - arrow_size,
-        arrow_x + arrow_base, arrow_y + arrow_size,
+        arrow_x + arrow_base, 
+        arrow_y - arrow_size,
+        arrow_x + arrow_base, 
+        arrow_y + arrow_size,
     ]
     
     canvas.create_polygon(
@@ -238,7 +233,7 @@ def panah():
         fill="#9F000F", #Warna Panah
         outline="black",
         width=2,
-        tags="indicator"
+        # tags="indicator"
     )
 
 # Inisialisasi GUI
@@ -255,7 +250,7 @@ canvas.pack(pady=10)
 frame = tk.Frame(root, bg="Black" ) #Warna Latar Tempat Tombol
 frame.pack(pady=10)
 
-list_frame = tk.Frame(root, bg="Black")  # Warna latar frame
+list_frame = tk.Frame(root, bg="Blue")  # Warna latar frame
 list_frame.pack(pady=10)
 
 #List Daftar Nama
